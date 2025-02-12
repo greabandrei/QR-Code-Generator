@@ -4,9 +4,99 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QR Generator</title>
-    <style></style>
+    <style>
+        body{
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            height: 60vh;
+            background-color: rgb(228, 247, 231);
+        }
+
+        #insert{       /*block of code where we introduce data*/
+            width: 30%;
+            height: 100px;
+            float: left;
+        }
+
+        #qrcode{
+            margin-left: 10%;
+            height: 100px;
+            background-color: blue;
+        }
+
+        #title{
+            display: flex;
+            margin-bottom: 40%;
+            justify-content: center;
+            align-items: center;
+        }
+
+        div.buttons{
+            border-radius: 10px;
+            width: 300px;
+            display: inline-flex;
+            height: 30px;
+        }
+
+        #btnCreate{
+            background-color: rgb(28, 223, 28);
+            font-size: 15px;
+            border-radius: 7px;
+            font-weight: bolder;
+            
+        }
+        #btnCreate:hover{
+            opacity: 65%;
+            transition: 0.25s;
+        }
+        
+
+        #btnClear{
+            background-color: rgb(250, 36, 36);
+            font-size: 15px;
+            border-radius: 7px;
+            font-weight: bolder;
+        }
+        #btnClear:hover{
+            opacity: 65%;
+            transition: 0.25s;
+        }
+
+        input{
+            opacity: 30%;
+            margin-left: 5px;
+            
+        }
+
+        #colors1{
+            margin-left: 10px;
+            opacity: 70%;
+        }
+
+        #colors2{
+            margin-left: 12px;
+            opacity: 70%;
+        }
+
+
+    </style>
 </head>
 <body>
+    <div id="title">
+        <h1>QR Generator</h1>
+    </div>
+    <div id="insert">
+            <h3>Enter URL<input type="url"></h3>
+            <h3>Inser weight<input type="number"></h3>
+            <h3>Insert height<input type="number"></h3>
+            <h3>Select dark color<input type="color" id="colors1"></h3>
+            <h3>Select light color<input type="color" id="colors2"></h3>
+        <div class="buttons">
+            <button id="btnCreate">Create QR Code</button>
+            <button id="btnClear">Clear QR Code</button>
+        </div>
+    </div>
     <div id="qrcode"></div>
     <script src="qrcode.js"></script>
     <script src="index.js"></script>
