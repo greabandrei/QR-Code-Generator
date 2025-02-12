@@ -6,11 +6,37 @@
     <title>QR Generator</title>
     <style>
         body{
-            display:flex;
-            align-items: center;
+            font-family: 'Times New Roman', Times, serif;
+            color: black;
+            font-weight: 400;
+            font-size: 1rem;
+            line-height: 1.5;
+            letter-spacing: .00938em;
+            display: flex;
+            flex-direction: column;
             justify-content: center;
-            height: 60vh;
-            background-color: rgb(228, 247, 231);
+            align-items: stretch;
+            flex-wrap: wrap;
+            align-content: flex-start;
+        }
+
+        .main{
+            box-sizing: border-box;
+            color: black;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            margin-top: 150px;
+         
+
+        }
+
+        div#details{
+           background-color: #f3f8f4;
+           width:600px;
+
+
         }
 
         #insert{       /*block of code where we introduce data*/
@@ -19,23 +45,41 @@
             float: left;
         }
 
-        #qrcode{
-            margin-left: 10%;
-            height: 100px;
-            background-color: blue;
+        div#qrcode{
+           border-left-color: rgb(255, 255, 255);
+           border-left-style: solid;
+           border-left-width: 4px;
+           box-sizing: border-box;
+           display: block;
+           font-weight: 400;
+           letter-spacing: 0.15px;
+           line-height: 24px;
+           margin: 0px;
+           padding-bottom: 24px;
+           padding-left: 32px;
+           padding-right: 32px;
+           padding-top: 17px;
+           text-size-adjust: 100%;
+           unicode-bidi: isolate;
+           width: 217px;
+           background-color: #f3f8f4;
+           height: 311.99px
         }
 
-        #title{
-            display: flex;
-            margin-bottom: 40%;
-            justify-content: center;
-            align-items: center;
+
+        div#title{
+           display: flex;
+           justify-content: center;
+           width: 100%;
         }
+
 
         div.buttons{
             border-radius: 10px;
-            width: 300px;
-            display: inline-flex;
+            width: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             height: 30px;
         }
 
@@ -79,25 +123,81 @@
             opacity: 70%;
         }
 
+        .input{
+            width: 100%;
+            margin-top: 30px;
+            border: none;
+            border-bottom: 1px solid black;
+            background: inherit;
+            padding: 5px 0;
+        }
+
+        .input-color{
+            width:20%;
+            margin-top: 30px;
+        }
+
+        label{
+            display: inline-block;
+            position: absolute;
+            margin-left: 4px;
+        }
+
+        label#color{
+            display: flex;
+            margin-left: 4px;
+        }
+
+        p{
+            display: inline-block;
+            position: absolute;
+            font-size: 13px;
+            margin-left: 4px;
+        }
+
+
 
     </style>
 </head>
 <body>
     <div id="title">
-        <h1>QR Generator</h1>
+        <h1 class="mx">QR Generator</h1>
     </div>
-    <div id="insert">
-            <h3>Enter URL<input type="url"></h3>
-            <h3>Inser weight<input type="number"></h3>
-            <h3>Insert height<input type="number"></h3>
-            <h3>Select dark color<input type="color" id="colors1"></h3>
-            <h3>Select light color<input type="color" id="colors2"></h3>
-        <div class="buttons">
-            <button id="btnCreate">Create QR Code</button>
-            <button id="btnClear">Clear QR Code</button>
+    
+    <div class="main">
+        <div id="details">
+            <div>
+                <p>Redirect to existing web URL</p>
+                <input class="input" data-input-type="url" >
+                <label>Enter URL</label>
+            </div>
+            <div>
+                <input class="input" type="number">
+                <label>Insert width</label>
+            </div>
+            <div>
+                <input class="input" type="number">
+                <label>Insert height</label>
+            </div>
+            <div>
+                <input class="input-color" type="color" id="colors1">
+                <label id="color">Select dark color</label>
+            </div>
+            <div>
+                <input class="input-color" type="color" id="colors2">
+                <label id="color">Select light color</label>
+            </div>
+            
+            <div class="buttons">
+                <button id="btnCreate">Create QR Code</button>
+            </div>
+
+        </div>
+        
+        <div id="qrcode">
+            
         </div>
     </div>
-    <div id="qrcode"></div>
     <script src="qrcode.js"></script>
     <script src="index.js"></script>
 </body>
