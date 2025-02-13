@@ -6,7 +6,7 @@
     <title>QR Generator</title>
     <style>
         body{
-            font-family: 'Times New Roman', Times, serif;
+            font-family:system-ui, -apple-system;
             color: black;
             font-weight: 400;
             font-size: 1rem;
@@ -28,15 +28,12 @@
             justify-content: center;
             align-items: center;
             margin-top: 50px;
-         
-
         }
 
         div#details{
            background-color: #f3f8f4;
            width:600px;
-
-
+            height: 390px;
         }
 
         #insert{       /*block of code where we introduce data*/
@@ -62,7 +59,7 @@
            padding-right: 32px;
            width: auto;
            background-color: #f3f8f4;
-           height: 316.99px
+           height: 390px
         }
 
 
@@ -84,13 +81,16 @@
         }
 
         #btnCreate{
-            background-color: rgb(6, 185, 6);
-            font-size: 15px;
-            border-radius: 3px;
-            font-weight: bolder;
+            background-color: rgb(103, 159, 56);
+            display: flex;
+            align-items: center;
+            border-color: rgb(199, 199, 199);
+            border-style: none;
+            font-size: 16px;
+            cursor: pointer;
             color: white;
-            border-color: #f3f8f4;
-            
+            height: 50px;
+            border-radius: 4px;
         }
         #btnCreate:hover{
             opacity: 65%;
@@ -99,12 +99,14 @@
         
 
         #btnClear{
-            background-color: rgb(250, 36, 36);
-            font-size: 15px;
-            border-radius: 3px;
-            font-weight: bolder;
+            background-color: rgb(228, 41, 41);
+            font-size: 16px;
+            border-radius: 4px;
+            border-style: none;
+            height: 50px;
             color: white;
             border-color: #f3f8f4;
+            width: 131.17px;
         }
         #btnClear:hover{
             opacity: 65%;
@@ -114,60 +116,82 @@
         input{
             opacity: 30%;
             margin-left: 5px;
-            
         }
 
         #colors1{
-            margin-left: 10px;
-            opacity: 70%;
+            margin-left: 130px;
+            opacity: 100%;
+
         }
 
         #colors2{
-            margin-left: 12px;
-            opacity: 70%;
+            margin-left: 130px;
+            opacity: 100%;
         }
 
         .input{
             width: 98%;
             margin-top: 30px;
             border: none;
-            border-bottom: 1px solid black;
-            background: inherit;
+            border-bottom: 1px solid rgb(0, 0, 0);
+            /* background: inherit; */
             padding: 5px 0;
+            position: relative;
+            opacity: 100%;
+            background-color: inherit;
+        }
+        .input:focus{
+            outline: 0;
+            border-bottom: 1px solid #797979;
+        }
+        .input:focus~label,
+        input:not(:placeholder-shown)~label{
+            top: -40px;
+            font-size: 10px;
+            transition: 0.3s;
+            position: relative;
+            height: 21.01px;
+            color: #888888;
         }
 
-        .input-color{
+        div.input-color{
             width:20%;
             margin-top: 30px;
+            margin-left: 130px;
         }
 
         label{
             display: block;
-            position: absolute;
+            position: relative;
             margin-left: 4px;
-            font-size: 15px;
+            font-size: 14px;
             font-weight: lighter;
+            top: -30px
         }
+      
+       
 
         label#color{
             display: flex;
             margin-left: 4px;
+            font-size: 14px;
+            top: -25px
         }
 
         p{
             display: flex;
-            width: 216px;
+            width: 210px;
             align-items: center;
             position: absolute;
             padding-left: 4px;
             font-size: 13px;
-            margin-left: 4px;
+            margin-left: 10px;
         }
 
         div#btn-position{
-            display: flow;
-            width: 130.65px;
-            padding-left: 15px;
+            display: flex;
+            justify-content: center;
+            padding-top: 10px;
         }
 
         img{
@@ -192,6 +216,15 @@
             font-size: larger;
         }
 
+        div.input-label{
+            position: relative;
+            width: 100%;  
+        }
+
+        div#first-btn{
+
+        }
+
     </style>
 </head>
 <body>
@@ -201,37 +234,43 @@
     </div>
 
     <div class="subtitle">
-        <p id="sub">Create a free QR Code-dynamic, well-designed, and trackable</p>        
+        <h3 id="sub">Create a free QR Code-dynamic, well-designed, and trackable</h3>        
     </div>
     
     <div class="main">
-        
         <div id="details">
-            <div>
-                <p>Redirect to existing web URL</p>
-                <input class="input" data-input-type="url" >
-                <label>Enter URL</label>
-            </div>
-            <div>
-                <input class="input" type="number">
-                <label>Insert width</label>
-            </div>
-            <div>
-                <input class="input" type="number">
-                <label>Insert height</label>
-            </div>
-            <div>
-                <input class="input-color" type="color" id="colors1">
-                <label id="color">Select dark color</label>
-            </div>
-            <div>
-                <input class="input-color" type="color" id="colors2">
-                <label id="color">Select light color</label>
-            </div>
+            <div class="input-label">
+               
+                <div>
+                    <input class="input" data-input-type="url" placeholder=" " >
+                    <label>Enter URL</label>
+                </div>
+                <div>
+                    <input class="input" type="number" placeholder=" " >
+                    <label>Insert width</label>
+                </div>
+                <div>
+                    <input class="input" type="number" placeholder=" " >
+                    <label>Insert height</label>
+                </div>
+
+                <div class="colors-btn">
+                    <div id="first-btn">
+                        <input class="input-color" type="color" id="colors1">
+                        <label id="color">Select dark color</label>
+                    </div>
+                    <div>
+                        <input class="input-color" type="color" id="colors2">
+                        <label id="color">Select light color</label>
+                    </div>
+                </div>
+            
+            </div>    
             
             <div class="buttons">
                 <button id="btnCreate">Create QR Code</button>
             </div>
+        
         </div>  
         
         <div id="qr-box">
@@ -244,6 +283,7 @@
                     </div>
                 </div>
             </div>
+       
         </div>
              
     </div>
