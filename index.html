@@ -92,10 +92,7 @@
             height: 50px;
             border-radius: 4px;
         }
-        #btnCreate:hover{
-            opacity: 65%;
-            transition: 0.25s;
-        }
+      
         
 
         #btnClear{
@@ -107,11 +104,9 @@
             color: white;
             border-color: #f3f8f4;
             width: 131.17px;
+            cursor: pointer;
         }
-        #btnClear:hover{
-            opacity: 65%;
-            transition: 0.25s;
-        }
+       
 
         input{
             opacity: 30%;
@@ -169,13 +164,13 @@
             top: -30px
         }
       
-       
 
         label#color{
             display: flex;
             margin-left: 4px;
             font-size: 14px;
-            top: -25px
+            top: -25px;
+            width: 100px
         }
 
         p{
@@ -256,11 +251,11 @@
 
                 <div class="colors-btn">
                     <div id="first-btn">
-                        <input class="input-color" type="color" id="colors1">
+                        <input class="input-color" type="color" id="colors1" value="#000">
                         <label id="color">Select dark color</label>
                     </div>
                     <div>
-                        <input class="input-color" type="color" id="colors2">
+                        <input class="input-color" type="color" id="colors2" value="#ffffff">
                         <label id="color">Select light color</label>
                     </div>
                 </div>
