@@ -27,7 +27,7 @@
             flex-direction: row;
             justify-content: center;
             align-items: center;
-            margin-top: 150px;
+            margin-top: 50px;
          
 
         }
@@ -50,7 +50,9 @@
            border-left-style: solid;
            border-left-width: 4px;
            box-sizing: border-box;
-           display: block;
+           display: flex;
+           flex-direction: column-reverse;
+           justify-content: center;
            font-weight: 400;
            letter-spacing: 0.15px;
            line-height: 24px;
@@ -58,10 +60,7 @@
            padding-bottom: 24px;
            padding-left: 32px;
            padding-right: 32px;
-           padding-top: 17px;
-           text-size-adjust: 100%;
-           unicode-bidi: isolate;
-           width: 217px;
+           width: auto;
            background-color: #f3f8f4;
            height: 316.99px
         }
@@ -125,7 +124,7 @@
         }
 
         .input{
-            width: 100%;
+            width: 98%;
             margin-top: 30px;
             border: none;
             border-bottom: 1px solid black;
@@ -139,11 +138,11 @@
         }
 
         label{
-            display: inline-block;
+            display: block;
             position: absolute;
             margin-left: 4px;
             font-size: 15px;
-            font-weight: bolder;
+            font-weight: lighter;
         }
 
         label#color{
@@ -152,13 +151,42 @@
         }
 
         p{
-            display: inline-block;
+            display: flex;
+            width: 216px;
+            align-items: center;
             position: absolute;
+            padding-left: 4px;
             font-size: 13px;
             margin-left: 4px;
         }
 
+        div#btn-position{
+            display: flow;
+            width: 130.65px;
+            padding-left: 15px;
+        }
 
+        img{
+            margin-top: 100px;
+            padding-bottom: 50px;
+        }
+
+        .subtitle{
+            display: flex;
+            justify-content: center;
+            color: #787878;
+            font-style: normal;
+            font-weight: 300;
+            margin-top:-10px;
+            height: 40px;
+        }
+
+        p#sub{
+            width: 500px;
+            display: flex;
+            justify-content: center;
+            font-size: larger;
+        }
 
     </style>
 </head>
@@ -167,8 +195,13 @@
         <h1 class="mx">QR Generator</h1>
             <h5>Free</h5>
     </div>
+
+    <div class="subtitle">
+        <p id="sub">Create a free QR Code-dynamic, well-designed, and trackable</p>        
+    </div>
     
     <div class="main">
+        
         <div id="details">
             <div>
                 <p>Redirect to existing web URL</p>
@@ -195,12 +228,20 @@
             <div class="buttons">
                 <button id="btnCreate">Create QR Code</button>
             </div>
-
-        </div>
+        </div>  
         
-        <div id="qrcode">
+        <div id="qr-box">
+            <p>To enable tracking, create a Dynamic QR Code </p>
             
+            <div class="qr-btn">
+                <div id="qrcode">
+                    <div id="btn-position">
+                        <button id="btnClear">Clear QR Code</button>
+                    </div>
+                </div>
+            </div>
         </div>
+             
     </div>
     <script src="qrcode.js"></script>
     <script src="index.js"></script>
