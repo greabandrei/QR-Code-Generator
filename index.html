@@ -219,8 +219,11 @@
             width: 100%;  
         }
 
-        div#first-btn{
-
+        div#colors-btn{
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-around;
+            width: 200px;
         }
 
     </style>
@@ -252,13 +255,13 @@
                     <label>Insert height</label>
                 </div>
 
-                <div class="colors-btn">
-                    <div id="first-btn">
-                        <input class="input-color" type="color" id="colors1" value="#000">
+                <div id="colors-btn">
+                    <div>
+                        <input type="color" id="colors1" value="#000">
                         <label id="color">Select dark color</label>
                     </div>
                     <div>
-                        <input class="input-color" type="color" id="colors2" value="#ffffff">
+                        <input type="color" id="colors2" value="#ffffff">
                         <label id="color">Select light color</label>
                     </div>
                 </div>
