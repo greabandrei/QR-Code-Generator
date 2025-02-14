@@ -1,3 +1,9 @@
+const qrGenerate = document.getElementById("qrcode");
+const createQr = document.getElementById("create-qr");
+const deleteQr = document.getElementById("delete-qr");
+
+createQr.addEventListener("click", generateQR)
+deleteQr.addEventListener("click", deleteQR )
 
 function generateQR(){
     const qrcode = new QRCode("qrcode", {
@@ -11,7 +17,5 @@ function generateQR(){
 }
 
 
-
-console.log("Hi")
 
 window.onload = generateQR(); //se asigura ca pagina a fost complet incarcata ca sa execute functia.
