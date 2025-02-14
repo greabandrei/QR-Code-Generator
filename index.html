@@ -3,294 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QR Generator</title>
-    <style>
-        body{
-            font-family:system-ui, -apple-system;
-            color: black;
-            font-weight: 400;
-            font-size: 1rem;
-            line-height: 1.5;
-            letter-spacing: .00938em;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: stretch;
-            flex-wrap: wrap;
-            align-content: flex-start;
-        }
-
-        .main{
-            box-sizing: border-box;
-            color: black;
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            margin-top: 50px;
-        }
-
-        div#details{
-           background-color: #f3f8f4;
-           width:600px;
-            height: 390px;
-        }
-
-        #insert{       /*block of code where we introduce data*/
-            width: 30%;
-            height: 100px;
-            float: left;
-        }
-
-        div#qrcode{
-           border-left-color: rgb(255, 255, 255);
-           border-left-style: solid;
-           border-left-width: 4px;
-           box-sizing: border-box;
-           display: flex;
-           flex-direction: column-reverse;
-           justify-content: center;
-           font-weight: 400;
-           letter-spacing: 0.15px;
-           line-height: 24px;
-           margin: 0px;
-           padding-bottom: 24px;
-           padding-left: 32px;
-           padding-right: 32px;
-           width: auto;
-           background-color: #f3f8f4;
-           height: 390px
-        }
-
-
-        div#title{
-           display: flex;
-           justify-content: center;
-           width: 100%;
-        }
-
-
-        div.buttons{
-            border-radius: 10px;
-            width: 600px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 30px;
-            padding-bottom: 5px;
-        }
-
-        #btnCreate{
-            background-color: rgb(103, 159, 56);
-            display: flex;
-            align-items: center;
-            border-color: rgb(199, 199, 199);
-            border-style: none;
-            font-size: 16px;
-            cursor: pointer;
-            color: white;
-            height: 50px;
-            border-radius: 4px;
-        }
-      
-        
-
-        #btnClear{
-            background-color: rgb(228, 41, 41);
-            font-size: 16px;
-            border-radius: 4px;
-            border-style: none;
-            height: 50px;
-            color: white;
-            border-color: #f3f8f4;
-            width: 131.17px;
-            cursor: pointer;
-        }
-       
-
-        input{
-            opacity: 30%;
-            margin-left: 5px;
-        }
-
-        #colors1{
-            position: relative;
-            opacity: 100%;
-            left: 120px;
-
-        }
-
-        #colors2{
-            position: relative;
-            opacity: 100%;
-            left: 120px;
-        }
-
-        .input{
-            width: 98%;
-            margin-top: 30px;
-            border: none;
-            border-bottom: 1px solid rgb(0, 0, 0);
-            /* background: inherit; */
-            padding: 5px 0;
-            position: relative;
-            opacity: 100%;
-            background-color: inherit;
-        }
-        .input:focus{
-            outline: 0;
-            border-bottom: 1px solid #797979;
-        }
-        .input:focus~label,
-        input:not(:placeholder-shown)~label{
-            top: -40px;
-            font-size: 10px;
-            transition: 0.3s;
-            position: relative;
-            height: 21.01px;
-            color: #888888;
-        }
-
-        div.input-color{
-            width:20%;
-            margin-top: 30px;
-            margin-left: 130px;
-        }
-
-        label{
-            transition: 0.3s;
-            display: block;
-            position: relative;
-            margin-left: 4px;
-            font-size: 14px;
-            font-weight: lighter;
-            top: -30px;
-            width: 76px;
-            height: 21.01px;
-        }
-      
-
-        label#color{
-            display: flex;
-            margin-left: 4px;
-            font-size: 14px;
-            top: -25px;
-            width: 100px
-        }
-
-        p{
-            display: flex;
-            width: 210px;
-            align-items: center;
-            position: absolute;
-            padding-left: 4px;
-            font-size: 13px;
-            margin-left: 10px;
-        }
-
-        div#btn-position{
-            display: flex;
-            justify-content: center;
-            padding-top: 10px;
-        }
-
-        img{
-            margin-top: 100px;
-            padding-bottom: 50px;
-        }
-
-        .subtitle{
-            display: flex;
-            justify-content: center;
-            color: #787878;
-            font-style: normal;
-            font-weight: 300;
-            margin-top:-10px;
-            height: 40px;
-        }
-
-        p#sub{
-            width: 500px;
-            display: flex;
-            justify-content: center;
-            font-size: larger;
-        }
-
-        div.input-label{
-            position: relative;
-            width: 100%;  
-        }
-
-        div#colors-btn{
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-            width: 200px;
-        }
-
-    </style>
+    <link rel="stylesheet" type="text/css" href="/index.css" />
+    <title>QR Code Generator</title>
 </head>
-<body>
-    <div id="title">
-        <h1 class="mx">QR Generator</h1>
-            <h5>Free</h5>
-    </div>
 
-    <div class="subtitle">
-        <h3 id="sub">Create a free QR Code-dynamic, well-designed, and trackable</h3>        
+<body>
+    <div class="top-container">
+        <h1 class="title">Free QR Code Generator</h1>
+        <h3 class="description">Create a free QR Code - dynamic, well-designed, and trackable</h3>
     </div>
     
-    <div class="main">
-        <div id="details">
-            <div class="input-label">
-               
-                <div>
-                    <input class="input" data-input-type="url" placeholder=" " >
-                    <label>Enter URL</label>
-                </div>
-                <div>
-                    <input class="input" type="number" placeholder=" " >
-                    <label>Insert width</label>
-                </div>
-                <div>
-                    <input class="input" type="number" placeholder=" " >
-                    <label>Insert height</label>
-                </div>
+    <div class="content-wrapper">
+        
+        <div class="content-left">
+            <div class="input-text-wrapper">
+                <input type="text" id="url-input" class="text-input" placeholder="">
+                <label class="animated-label">Enter URL</label>
+            </div>
+            <div class="input-text-wrapper">
+                <input type="number" id="url-input" class="text-input" placeholder="">
+                <label class="animated-label">Insert width</label>
+            </div>
+            <div class="input-text-wrapper">
+                <input type="number" id="url-input" class="text-input" placeholder="">
+                <label class="animated-label">Insert height</label>
+            </div>
 
-                <div id="colors-btn">
-                    <div>
-                        <input type="color" id="colors1" value="#000">
-                        <label id="color">Select dark color</label>
-                    </div>
-                    <div>
-                        <input type="color" id="colors2" value="#ffffff">
-                        <label id="color">Select light color</label>
-                    </div>
-                </div>
-            
-            </div>    
-            
-            <div class="buttons">
-                <button id="btnCreate">Create QR Code</button>
+            <div class="color-picker-wrapper">
+                <label class="color-label">Select darker color</label>
+                <input type="color" id="url-input" class="color-input">
             </div>
-        
-        </div>  
-        
-        <div id="qr-box">
-            <p>To enable tracking, create a Dynamic QR Code </p>
-            
-            <div class="qr-btn">
-                <div id="qrcode">
-                    <div id="btn-position">
-                        <button id="btnClear">Clear QR Code</button>
-                    </div>
-                </div>
+            <div class="color-picker-wrapper">
+                <label class="color-label">Select lighter color</label>
+                <input type="color" id="url-input" class="color-input" value="#ffffff" >
             </div>
-       
+            <div class="btn-wrapper">
+                <button class="btn-style btn-green" id="create-qr">
+                    Create QR Code
+                </button>
+            </div>
         </div>
-             
+        
+        <div class="content-right">
+            <div class="top-text">
+                <span class="top-qr-description">To enable tracking, </span> 
+                    <span class="qr-description">create a Dynamic QR Code</span>
+            </div>
+            <div class="qr-space">
+                <div class="qr-box">
+                    <img src="./assets/QR_code_for_mobile_English_Wikipedia.svg.png">
+                </div>
+            </div>
+            <div class="btn-wrapper-qr">
+                <button class="btn-style btn-red" id="delete-qr">
+                    Delete QR Code
+                </button>
+            </div>
+        </div>
+
     </div>
-    <script src="qrcode.js"></script>
-    <script src="index.js"></script>
+    
+    <script src="/index.js"></script>
+    <script src="/qrcode.js"></script>
 </body>
 </html>

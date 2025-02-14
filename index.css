@@ -1,0 +1,168 @@
+body {
+    font-family: sistem-ui, sans-serif;
+    }
+    
+input:focus {
+    box-shadow: none;
+    outline: none;
+}
+    
+
+/* UPSIDE PART */
+    
+.title {
+    margin-top: 50px;
+    font-size: 30px;
+}
+          
+.description {
+    font-size: 20px;
+    color: #999;
+    font-weight: bold;
+}
+    
+.top-container {
+    text-align: center;
+}
+    
+
+/* Content PART */
+    
+.content-wrapper {
+    width: 90%;
+    max-width: 800px;
+    min-height: 200px;
+    margin: 50px auto;
+    display: flex;
+    gap: 4px;
+}
+    
+.content-left {
+      background: #f3f8f4; 
+      width: 70%;
+      min-height: 150px;
+      padding: 20px 10px;
+}
+    
+
+.input-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin: 5px 0 25px 0;
+}
+
+.color-picker-wrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    
+}
+
+.color-label {
+    width: 150px;
+    
+}
+
+
+.text-input {
+    border: none;
+    border-bottom: 1px solid #333;
+    padding: 8px 4px;
+    font-size: 16px;
+    background: none;
+    z-index: 2;
+}
+
+.text-input:focus~.animated-label, .text-input:not(:placeholder-shown)~.animated-label {
+    top: -10px;
+    font-size: 12px;
+    color: #888;
+}
+
+.animated-label {
+    position: absolute;
+    top: 10px;
+    left: 0px;
+    transition: 0.3s ease;
+}
+
+.btn-wrapper {
+    text-align: center;
+}
+
+.btn-wrapper-qr {
+    height: 55.09px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 59px;
+}
+
+.btn-style {
+    padding: 18px 26px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-green {
+    background: green;
+    color: white
+}
+
+.btn-red {
+    background: red;
+    color: white;
+}
+
+.content-right {
+    background: #f3f8f4; 
+    width: 30%;
+    min-height: 150px;
+}
+
+.qr-description {
+    text-decoration: underline;
+}
+
+.top-text {
+    padding: 10px;
+    align-items: center;
+    font-size: 15px;
+}
+
+.qr-space {
+    height: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.qr-box {
+    height: 90%;
+    width: 75%;
+    background: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+
+@media only screen and (max-width: 500px) {
+    .content-wrapper {
+       flex-direction: column; 
+    }
+    
+    .content-left{
+      width: 100%;
+    }
+    
+    .content-right {
+      width: 100%;
+    }
+  }
