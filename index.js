@@ -16,15 +16,21 @@ deleteQr.addEventListener("click", clearQr);   //triggers an action when 'delete
 
 //generate QR code. When the button is pressed , function is called
 function generateQR(){     //(the order is key to this logic) //1.function called
+    
     clearQr();                  //2.initial qr code is deleted
-    new QRCode(qrCodeHTML, {    //3.new one is created
-        text: url.value,        //retrieve data inserted in the url input
-        width: width.value,     //retrieve data inserted in the width input 
-        height: height.value,   //retrieve data inserted in the height input
-        colorDark : darkColor.value, //retrieve the color code from darker color input
-        colorLight : lightColor.value,  //retrieve the color code from lighter color input
-        correctLevel : QRCode.CorrectLevel.H
-    });
+    if(width.value <= 160 && width.value >= 100 && height.value >= 100 && height.value <= 160) {
+        new QRCode(qrCodeHTML, {    //3.new one is created
+            text: url.value,        //retrieve data inserted in the url input
+            width: width.value,     //retrieve data inserted in the width input 
+            height: height.value,   //retrieve data inserted in the height input
+            colorDark : darkColor.value, //retrieve the color code from darker color input
+            colorLight : lightColor.value,  //retrieve the color code from lighter color input
+            correctLevel : QRCode.CorrectLevel.H
+        });
+    }
+    else{
+       alert('width and height size must be between 100 and 160')
+    }
 }
 
 function clearQr(){         //when  the red button is triggered, function is called and empties the child node of "qrcode"

@@ -80,7 +80,7 @@ input:focus {
     color: #888;
 }
 
-input:-webkit-autofill,
+input:-webkit-autofill,      /*edits browser autofill in order to not affect the initial visuals*/
 input:-webkit-autofill:hover, 
 input:-webkit-autofill:focus {
   -webkit-text-fill-color: #000000;
