@@ -80,11 +80,19 @@ input:focus {
     color: #888;
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #000000;
+  -webkit-box-shadow: 0 0 0px 40rem #f3f8f4 inset;
+}
+
 .animated-label {
     position: absolute;
     top: 10px;
     left: 0px;
     transition: 0.3s ease;
+    z-index: 2;
 }
 
 .btn-wrapper {
