@@ -17,8 +17,8 @@ deleteQr.addEventListener("click", clearQr);   //triggers an action when 'delete
 //generate QR code. When the button is pressed , function is called
 function generateQR(){     //(the order is key to this logic) //1.function called
     
-    clearQr();                  //2.initial qr code is deleted
     if(width.value <= 160 && width.value >= 100 && height.value >= 100 && height.value <= 160) {
+        clearQr();                  //2.initial qr code is deleted
         new QRCode(qrCodeHTML, {    //3.new one is created
             text: url.value,        //retrieve data inserted in the url input
             width: width.value,     //retrieve data inserted in the width input 
@@ -38,12 +38,6 @@ function clearQr(){         //when  the red button is triggered, function is cal
     // qrCode.clear()
 };
     
-
-
-
-
-
-
 
 
 window.onload = generateQR(); //se asigura ca pagina a fost complet incarcata ca sa execute functia.
