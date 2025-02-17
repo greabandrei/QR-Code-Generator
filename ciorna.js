@@ -1,15 +1,6 @@
-function generateQR(){
-    const qrcode = new QRCode("qrcode", {
-        text: "https://emag.com",
-        width: 250,
-        height: 250,
-        colorDark : "#000",
-        colorLight : "#f2f2f2",
-        correctLevel : QRCode.CorrectLevel.H
-    });
-}
+// const url = document.getElementById("url-input");
 
-
+// console.log(url)
 
 // div#qrcode{
 //     /* border-left-color: white;

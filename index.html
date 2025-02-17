@@ -16,32 +16,33 @@
     <div class="content-wrapper">
         
         <div class="content-left">
+            
             <div class="input-text-wrapper">
-                <input type="text" id="url-input" class="text-input" placeholder="">
+                <input type="url" id="url-input" class="text-input" placeholder="">
                 <label class="animated-label">Enter URL</label>
             </div>
             <div class="input-text-wrapper">
-                <input type="number" id="url-input" class="text-input" placeholder="">
+                <input type="number" min="100" id="width-input" class="text-input" placeholder="">
                 <label class="animated-label">Insert width</label>
             </div>
             <div class="input-text-wrapper">
-                <input type="number" id="url-input" class="text-input" placeholder="">
+                <input type="number" min="100" id="height-input" class="text-input" placeholder="">
                 <label class="animated-label">Insert height</label>
             </div>
-
             <div class="color-picker-wrapper">
                 <label class="color-label">Select darker color</label>
-                <input type="color" id="url-input" class="color-input">
+                <input type="color" id="dark-input" class="color-input">
             </div>
             <div class="color-picker-wrapper">
                 <label class="color-label">Select lighter color</label>
-                <input type="color" id="url-input" class="color-input" value="#ffffff" >
+                <input type="color" id="light-input" class="color-input" value="#ffffff" >
             </div>
             <div class="btn-wrapper">
                 <button class="btn-style btn-green" id="create-qr">
                     Create QR Code
                 </button>
             </div>
+
         </div>
         
         <div class="content-right">
@@ -65,5 +66,7 @@
     
     <script src="/index.js"></script>
     <script src="/qrcode.js"></script>
+    <script src="/ciorna.js"></script>
+
 </body>
 </html>
